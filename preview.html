@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+</head>
+<body>
+<div class="preview-content">
+
+    <div class="header">
+        <div class="content-title">工作周报</div>
+        <div class="info">
+            <div class="info-item">
+                组别:
+            </div>
+            <div class="info-item">
+                汇报人:
+            </div>
+            <div class="info-item">
+                周期:
+            </div>
+        </div>
+    </div>
+
+    <div class="content-work">
+        <div class="work-title">
+            <div class="work-title-item">
+                事项/模块
+            </div>
+            <div class="work-title-item">
+                本周工作内容
+            </div>
+        </div>
+        <div class="work-content">
+
+            <div v-for="item in workData" class="work-content-item">
+                <div class="work-content-item-l">
+                    {{item.module}}
+                </div>
+                <div class="work-content-item-r">
+                    {{item.text}}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="content-work">
+        <div class="work-title">
+            <div class="work-title-item" style="border: 0">
+            </div>
+            <div class="work-title-item">
+                本周工作终结
+            </div>
+        </div>
+        <div class="work-summary">
+            {{summaryDesc}}
+        </div>
+    </div>
+
+
+    <div class="content-work">
+        <div class="work-title">
+            <div class="work-title-item">
+                事项/模块
+            </div>
+            <div class="work-title-item">
+                下周工作计划
+            </div>
+        </div>
+        <div class="work-content">
+            <div v-for="item in planData" class="work-content-item">
+                <div class="work-content-item-l">
+                    {{item.module}}
+                </div>
+                <div class="work-content-item-r">
+                    {{item.text}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn-box">
+        <el-button type="primary" @click="gopush">发送</el-button>
+    </div>
+</div>
+<script>
+</script>
+</body>
+</html>
+
+<style>
+    .preview-content{
+        width:940px;
+        margin 0 auto;
+    }
+    .btn-box{
+        text-align:right;
+        margin-top 10px;
+    }
+    .content-title{
+        background-color :rgb(91,155,213);
+        height:46px;
+        line-height :46px;
+        font-size 14px;
+        font-weight bold;
+        border-left :1px solid black;
+        border-right :1px solid black
+    }
+    .info{
+        display: flex;
+        height :40px;
+        line-height :40px;
+        border :1px solid black;
+        text-align:left;
+    }
+    .info-item{
+        flex:1;
+        border-right:1px solid black;
+        padding-left:10px;
+    }
+    .info-item:last-child{
+        border: 0;
+    }
+    .work-title{
+        display:flex;
+        height:40px;
+        line-height: 40px;
+        color: white;
+        font-size :11px;
+        font-weight: bold;
+        background-color rgb(153,51,0);
+        border-left :1px solid black
+        border-right :1px solid black
+    }
+    .work-title-item:first-child{
+        flex:1;
+        border-right:1px solid black;
+    }
+    .work-title-item:last-child{
+        flex:3
+    }
+    .work-content{
+        font-size :14px;
+        font-weight: bold;
+        border-left :1px solid black;
+        border-right :1px solid black;
+
+    }
+    .work-content-item{
+        display:flex;
+        font-size:14px;
+        height:40px;
+        line-height :40px;
+        border-bottom :1px solid black;
+    }
+    .work-content-item-l{
+        flex:1;
+        border-right:1px solid black;
+    }
+    .work-content-item-r{
+        flex:3;
+        text-align: left;
+        text-indent:20px;
+    }
+    .work-summary{
+        flex:1;
+        height:80px;
+        text-align: left;
+        text-indent:20px;
+        border-left :1px solid black;
+        border-right :1px solid black;
+    }
+
+</style>
