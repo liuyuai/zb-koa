@@ -13,7 +13,7 @@ const router = new Router();
 const cors = require('koa2-cors');  // 解决跨域问题
 const bodyParser = require('koa-bodyparser');  //解决post请求问题
 
-console.log9('欢迎进入node后台');
+console.log('欢迎进入node后台');
 
 
 app.use(bodyParser());
